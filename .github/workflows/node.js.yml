@@ -69,7 +69,7 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
 
-  sonar_frontend:
+  sonarqube_scan:
     runs-on: Agent-1
     needs: trivy_fs_scan
 
