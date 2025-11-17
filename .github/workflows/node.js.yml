@@ -39,6 +39,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Remove gitleaks from tmp if it exist
+        run: rm -f /tmp/gitleaks.tmp || echo "gitleaks.tmp has already been removed."
+
       - name: Gitleaks Setup
         uses: gitleaks/gitleaks-action@v2
 
