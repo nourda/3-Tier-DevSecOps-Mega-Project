@@ -78,7 +78,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: SonarCloud Scan for Frontend
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@sha1
         with:
           projectBasedir: client
           args: >
@@ -86,7 +86,6 @@ jobs:
             -Dsonar.projectName=myapp_frontend_name
             -Dsonar.sources=.
             -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/**.test.js,**/build/**
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
           
@@ -99,7 +98,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: SonarCloud Scan for Backend
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@sha1
         with:
           projectBasedir: api
           args: >
@@ -107,5 +106,4 @@ jobs:
             -Dsonar.projectName=myapp_backend_name
             -Dsonar.sources=.
             -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/**.test.js,**/build/**
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
