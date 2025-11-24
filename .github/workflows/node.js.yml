@@ -4,8 +4,7 @@
 name: Node.js CICD
 
 on:
-  push:
-    branches: [ none ]
+  workflow_dispatch:
 
 jobs:
   compile:
