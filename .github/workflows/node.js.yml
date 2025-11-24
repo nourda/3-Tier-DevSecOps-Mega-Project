@@ -136,7 +136,7 @@ jobs:
 
   trivy_image_scan:
     runs-on: Agent-1
-    needs: docker_frontend_image_bulid_and_push
+    needs: [docker_frontend_image_bulid_and_push, docker_backend_image_bulid_and_push]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
